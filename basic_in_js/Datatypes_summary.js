@@ -23,6 +23,34 @@ const myFunc = function () {
     console.log("Hello world");
 }
 
-console.log(typeof city);
-console.log(typeof anotherId);
-console.log(typeof outsideTem);
+// console.log(typeof city);
+// console.log(typeof anotherId);
+// console.log(typeof outsideTem);
+
+
+
+// Memory Details :-
+// stack(primitive) and Heap(Refrence)
+// stack(primitive):-when variable is being declared we get a copy.
+// Heap(Refrence):- When variable is being declared we gert a refrence.
+
+
+let myYoutubeName="avij@gmail.com";
+let anotherName=myYoutubeName;
+anotherName="jbhhsadd";
+console.log("anotherName",anotherName);
+console.log("myYoutubeName",myYoutubeName);
+
+
+let user={
+    email:"user@gmail.com",
+    upi:"user@ybl",
+
+}
+
+
+let userTwo=user;
+userTwo.email="jhbb@gmail.com"
+
+console.log(user.email);
+console.log(userTwo.email);
