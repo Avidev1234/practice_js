@@ -29,8 +29,6 @@ console.log(checkSubstring);
 const anotherString = gameName.slice(-30, 3);
 console.log("anotherString", anotherString);
 
-
-
 const newStringOne= "      jhvgjkh       ";
 console.log(newStringOne);
 console.log(newStringOne.trim());//It remove the space problem from 1st and end
