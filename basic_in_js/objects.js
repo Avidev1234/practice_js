@@ -110,10 +110,28 @@ const db_user=[
 
 db_user[1].email;
 
-console.log(newObj);
-console.log(Object.keys(newObj));//it returns only key in array format
-console.log(Object.values(newObj));//it returns only values in array format
-console.log(Object.entries(newObj));//it return both in array format 
+// console.log(newObj);
+// console.log(Object.keys(newObj));//it returns only key in array format
+// console.log(Object.values(newObj));//it returns only values in array format
+// console.log(Object.entries(newObj));//it return both in array format 
 
-console.log(newObj.hasOwnProperty('timedf'));//it will check weather the key/property is there ot not
+// console.log(newObj.hasOwnProperty('timedf'));//it will check weather the key/property is there ot not
 
+// Destructuring in Objects
+
+const course={
+    courseName:"js in hindi",
+    price:"999",
+    courseInstructor:"Hitesh"
+}
+
+const {courseInstructor:Instructor}=course;
+console.log(Instructor);
+ 
+
+// JSON
+// {
+//     "name":"hitesh",
+//     "courseName":"Js in Hindi",
+//     "price":"free",
+// }
