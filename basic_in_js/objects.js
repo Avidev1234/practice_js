@@ -86,3 +86,34 @@ const obj_4={
 // const obj_3=Object.assign({},obj_1,obj_2,obj_4);
 const obj_3={...obj_1,...obj_2,...obj_4}
 console.log(obj_3);
+
+
+
+const db_user=[
+    {
+        id:"1",
+        email:"h@gmail.com"
+    },
+    {
+        id:"2",
+        email:"hr@gmail.com"
+    },
+    {
+        id:"3",
+        email:"hef@gmail.com"
+    },
+    {
+        id:"4",
+        email:"hng@gmail.com"
+    },
+]
+
+db_user[1].email;
+
+console.log(newObj);
+console.log(Object.keys(newObj));//it returns only key in array format
+console.log(Object.values(newObj));//it returns only values in array format
+console.log(Object.entries(newObj));//it return both in array format 
+
+console.log(newObj.hasOwnProperty('timedf'));//it will check weather the key/property is there ot not
+
