@@ -57,7 +57,7 @@ if (true) {
 // console.log(user);//cannot be accessed outside the block scope
 
 // +++++++++++++++intresting++++++++++++++
-
+// Hoisting
 console.log(addone(5));//6
 function addone(num) {
     return num + 1;
