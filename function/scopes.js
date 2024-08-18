@@ -58,7 +58,13 @@ if (true) {
 
 // +++++++++++++++intresting++++++++++++++
 
+console.log(addone(5));//6
 function addone(num) {
     return num + 1;
 }
-addone(5)
+
+addTwo(8) //Cannot access 'addTwo' before initialization
+const addTwo = function (num) {
+    return num + 2
+
+}
