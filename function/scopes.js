@@ -19,15 +19,15 @@ if (true) {
 // In let,const it is not declare in outside of the block scope.It should be within block scope if it is defined within bock scope. 
 
 
-// {
-//     let a2=2000;
-// }
-// console.log(a2);
-// This code is coming good
+{
+    let a2=2000;
+    // console.log("a2",a2);This code is coming good
+}
+   // console.log("a2",a2);//This code is coming error
 {
     var a500 = 2000;
 }
-console.log(a500);
+console.log("a500",a500);
 
 // Loop hole in this code 
 // in case of nested function the variable/propertis of parent function can bee accessed by child function.
@@ -63,8 +63,24 @@ function addone(num) {
     return num + 1;
 }
 
-addTwo(8) //Cannot access 'addTwo' before initialization
+// addTwo(8) //Cannot access 'addTwo' before initialization
 const addTwo = function (num) {
     return num + 2
 
 }
+addTwo(8) //Cannot access 'addTwo' before initialization
+
+
+
+var c=400;
+
+if(true){
+    let a=40;
+    let b=10;
+    var c=45;
+}
+
+
+// console.log("a is:-",a);
+// console.log("b is:-",b);
+console.log("c is:-",c);
