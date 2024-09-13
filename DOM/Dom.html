@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        .bg-black{
+        .bg-black {
             background-color: #212121;
             color: #fff;
         }
@@ -16,10 +16,63 @@
     <div>
         <h1 id="title" class="para">DOM Learning on chai aur code <span style="display: none;">test Text</span></h1>
         <h1>Lorem ipsum dolor sit.</h1>
-        <h2>Lorem, ipsum.</h2>
+        <h2 class="para_2">Lorem, ipsum.</h2>
         <h3>Lorem ipsum dolor sit.</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, eius!</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+        </ul>
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+        </ul>
     </div>
 </body>
+<!-- title.innerHTML:-DOM Learning on chai aur code <span style="display: none;">test Text</span>.
+title.innerText:- DOM Learning on chai aur code.
+title.textContent:-DOM Learning on chai aur code test Text.
+document.getElementsByClassName('para'); :-return object
+document.querySelector('h2'):- <h2>Lorem, ipsum.</h2>
+document.querySelector('#title'):-<h1 id="title" class="para">DOM Learning on chai aur code <span style="display: none;">test Text</span></h1>
+document.querySelector('.para'):-<h1 id="title" class="para">DOM Learning on chai aur code <span style="display: none;">test Text</span></h1>
+document.querySelector('ul'):- <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+
+        querySelector():-only select the first list items
+
+        const myul=document.querySelector('ul');
+        myul.querySelector('li'):-output <li style="background-color: yellow; padding: 10px; color: black;">tree</li>
+        const turn_green=document.querySelector('li'):- turn_green.style.backgroundColor='yellow':-'yellow'
+        turn_green.style.padding='10px':-10px
+        turn_green.style.color='black';
+
+        turn_green.innerText='tree';
+        document.querySelectorAll('ul'):-return  all  ul
+        document.querySelectorAll('li'):-return  all li
+
+        const tempList=document.querySelectorAll('li');
+        console.log(tempList);// output NodeList(6) [li, li, li, li, li, li]
+        tempList.style.color="red"; TypeError: Cannot set properties of undefined (setting 'color')
+        tempList[0].style.color="red"; (The reason for using tempList[0] is Nodelisit & Nodelisit is not an array it is the type of array).
+
+        The basic difference between  querySelector & querySelectorAll is:-
+        querySelectorAll returns array type value and querySelector returns only 1st element.
+
+        const templList = document.querySelectorAll('ul');
+        console.log(templList); :-NodeList(2) [ul, ul];
+        templList.forEach(function(l){
+            l.style.backgroundColor="green";
+        });
+
+
+-->
 
 </html>
