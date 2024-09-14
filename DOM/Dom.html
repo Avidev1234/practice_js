@@ -72,7 +72,13 @@ document.querySelector('ul'):- <ul>
             l.style.backgroundColor="green";
         });
 
-
+        const tem=document.getElementsByClassName('list-item');//Not an array i need to use for each loop to access the element so i convert it into array.
+        Array.from(tem)
+        const myConvertedArray=Array.from(tem);
+        myConvertedArray.forEach(function(li){
+        console.log(li);
+        li.style.color="orange"
+         })
 -->
 
 </html>
