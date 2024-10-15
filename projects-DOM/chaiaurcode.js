@@ -1,5 +1,5 @@
 const button=document.querySelectorAll('.button');
-// console.log(button);
+// console.log(button); //output as Nodelist
 
 const body=document.querySelector("body");
 console.log(body);
@@ -7,7 +7,7 @@ const head=document.querySelector("h1");
 // console.log(head);
 
 button.forEach((btn)=>{
-    console.log(btn);
+    // console.log(btn);
     btn.addEventListener('click',function(e){
         console.log(e);
         console.log(e.target);
@@ -27,4 +27,4 @@ button.forEach((btn)=>{
         }
         
     })
-})
+}) 
