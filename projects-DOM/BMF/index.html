@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            color: white;
+        }
+        input{
+            padding: 10px;
+        }
+        form{
+            width: 40%;
+            border: 2px solid white;
+            margin: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        button{
+            width: 20%;
+            padding: 10px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: aqua;
+        }
+        h3,p{
+            color:white
+        }
+        #result{
+            color:white
+        }
+    </style>
+</head>
+<body style="background-color: #212121;">
+    <div class="container">
+        <form>
+           <label for="" >Height in CM:</label>
+           <input type="text" id="height" placeholder="Enter height"><br>
+           <label for="" >Weight in Kg:</label>
+           <input type="text" id="weight" placeholder="Enter weight"><br>
+           <button>Calculate</button>
+           <div id="result"></div>
+           <div class="weight-guide">
+            <h3>BMI Weight Guide</h3>
+            <p>Under Weight = Less than 18.6</p>
+            <p>Normal Range =18.6 and 24.9</p>
+            <p>Overweight= Greter than 24.9</p>
+           </div>
+        </form>
+    </div>
+</body>
+<script src="bmf.js"></script>
+</html>

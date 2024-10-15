@@ -26,5 +26,5 @@ button.forEach((btn)=>{
             head.style.color="black";
         }
         
-    })
+    })  
 }) 
