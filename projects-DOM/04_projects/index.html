@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock {
+            width: 10%;
+            font-size: 40px;
+            background-color: orange;
+            padding: 20px 50px;
+            /* margin-top: 10px; */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form class="form" action="">
+        <label for="" id="guess">Guess Number</label> <br>
+        <input type="text" id="guessField" class="guessField"><br>
+        <input type="submit" id="subt" value="submit guess">
+    </form>
+    <div class="resultParas">
+        <p>Previous Gusses: <span class="gusses"></span></p>
+        <p>Gusses Remaining: <span class="lastResult">10</span></p>
+        <p class="lowOrHi"></p>
+    </div>
+</body>
+<script src="number.js"></script>
+</html>
