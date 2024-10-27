@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" src="./images/pexels-alinaskazka-28052378.jpg" id="image1" alt=""></li>
+            <li><img width="200px" src="./images/pexels-brett-sayles-11931931.jpg" id="image2" alt=""></li>
+            <li><img width="200px" src="./images/pexels-mo-tawil-1988696405-28959121.jpg" id="image3" alt=""></li>
+            <li><img width="200px" src="./images/pexels-violetta-b-1460865357-28435299.jpg" id="image4" alt=""></li>
+            <li><img width="200px"
+                    src="./images/pngtree-christmas-ball-pine-branch-green-border-picture-image_6843979.png" id="image5"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" rel="stylesheet" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // attachEvent()->Internet Explorer
+    // jQuery->onEventListner
+    //type,timestamp,defaultPrevented.
+    //target,toElement,srcElement,currentTarget
+    //clientX,clientY,screenX,screenY
+    //altkey,ctrlkey,shiftkey,keyCode
+
+    // document.getElementById('image5').onclick=()=>{
+    //     alert("Hello");
+    // }
+
+    // Bubbling up :- Propgate from child nodes to parent nodes we use `false` as a 3rd argument.
+
+    // document.getElementById('images').addEventListener('click', (e) => {
+    //     console.log("click inside the ul"); //events
+  
+    // },false);
+
+    // document.getElementById('image5').addEventListener('click', (e) => {
+    //     console.log("images5 clicked"); //events
+    //     e.stopPropagation()
+    // },false);
+
+    // Bubbling up :- Propgate from child nodes to parent nodes we use `false` as a 3rd argument.
+
+    // capturing up :- Propgate from child nodes to parent nodes we use `true` as a 3rd argument.
+
+    // document.getElementById('images').addEventListener('click', (e) => {
+    //     console.log("click inside the ul"); //events
+    // },true);
+
+    // document.getElementById('image5').addEventListener('click', (e) => {
+    //     console.log("images5 clicked"); //events
+
+    // },true);
+
+    // capturing up :- Propgate from child nodes to parent nodes we use `true` as a 3rd argument.
+    // document.getElementById('image5').addEventListener('click',()=>{
+
+    // },false)
+
+
+    document.getElementById('google').addEventListener('click',(e)=>{
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked");
+    })
+</script>
+
+</html>
