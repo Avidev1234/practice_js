@@ -24,53 +24,100 @@
     </div>
 </body>
 <script>
+    // -----------------------------------------------X--------------------------------------------------------
     // attachEvent()->Internet Explorer
     // jQuery->onEventListner
     //type,timestamp,defaultPrevented.
     //target,toElement,srcElement,currentTarget
     //clientX,clientY,screenX,screenY
     //altkey,ctrlkey,shiftkey,keyCode
+    // -----------------------------------------------X--------------------------------------------------------
+
+    // -----------------------------------------------X--------------------------------------------------------
+    //----------- Given below code is not a good practise, instead we can use eventListners because we get more details  about the events in `addEventListners` but also give `propogation` ability-----------
 
     // document.getElementById('image5').onclick=()=>{
     //     alert("Hello");
     // }
 
-    // Bubbling up :- Propgate from child nodes to parent nodes we use `false` as a 3rd argument.
+    //----------- Given below code is not a good practise, instead we can use eventListners because we get more details  about the events in `addEventListners` `propogation` ability-----------
+    // -----------------------------------------------X--------------------------------------------------------
+
+
+    // -----------------------------------------------X--------------------------------------------------------
+    // Bubbling up :- Propgate from child nodes to parent nodes we use `false` as a 3rd argument.This is the event Propogation.By defeault there is `false` in addEventListener.
 
     // document.getElementById('images').addEventListener('click', (e) => {
     //     console.log("click inside the ul"); //events
-  
-    // },false);
+
+    // }, false);
 
     // document.getElementById('image5').addEventListener('click', (e) => {
     //     console.log("images5 clicked"); //events
-    //     e.stopPropagation()
-    // },false);
+    //   //  e.stopPropagation();//this will prevent the bubbling of element
+    // }, false);
 
-    // Bubbling up :- Propgate from child nodes to parent nodes we use `false` as a 3rd argument.
+    // output: 
+    //  images5 clicked
+    // click inside the ul
 
-    // capturing up :- Propgate from child nodes to parent nodes we use `true` as a 3rd argument.
+    // from child to parent/from down to up
+    // Bubbling up :- Propogate from child nodes to parent nodes we use `false` as a 3rd argument.
+    // -----------------------------------------------X--------------------------------------------------------
+
+    // -----------------------------------------------X--------------------------------------------------------
+    // capturing up :- Propogate from child nodes to parent nodes we use `true` as a 3rd argument.
 
     // document.getElementById('images').addEventListener('click', (e) => {
     //     console.log("click inside the ul"); //events
-    // },true);
+    // }, true);
 
     // document.getElementById('image5').addEventListener('click', (e) => {
     //     console.log("images5 clicked"); //events
 
-    // },true);
+    // }, true);
+    // output: 
+    //click inside the ul
+    //  images5 clicked
+    // from parent to child/from up to down.
 
     // capturing up :- Propgate from child nodes to parent nodes we use `true` as a 3rd argument.
+
+
     // document.getElementById('image5').addEventListener('click',()=>{
 
     // },false)
 
-
-    document.getElementById('google').addEventListener('click',(e)=>{
-        e.preventDefault()
-        e.stopPropagation()
+    // -----------------------------------------------X--------------------------------------------------------
+    document.getElementById('google').addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();//this will prevent the bubbling of element
         console.log("google clicked");
     })
+
+    // -----------------------------------------------X--------------------------------------------------------
+    //     const images=document.querySelector('#images').addEventListener('click',(e)=>{
+    //     console.log(e);
+    // })
+    // const images=document.querySelector('#images').addEventListener('click',(e)=>{
+    //     console.log(e.target);
+    // })
+    // const images = document.querySelector('#images').addEventListener('click', (e) => {
+    //     console.log(e.target.parentNode);
+    // })
+    const images=document.querySelector('#images').addEventListener('click',(e)=>{
+
+    // console.log(removeli);
+    console.log(e.target.tagName);
+
+    if (e.target.tagName ==='IMG') {
+        // console.log(e.target.id);
+        let removeli=e.target.parentNode;
+        removeli.remove();
+    } 
+    // or
+    // removeli.parentNode.removeChild(removeli);
+})
 </script>
 
 </html>
