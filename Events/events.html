@@ -31,6 +31,28 @@
     //target,toElement,srcElement,currentTarget
     //clientX,clientY,screenX,screenY
     //altkey,ctrlkey,shiftkey,keyCode
+    // ----------------------Events------------------------------------------------
+    // console.log(e.target.altkey):-The altKey property returns true if the ALT key is pressed when a mouse event occurs;
+
+    // altitudeAngle:-The altitudeAngle read-only property of the PointerEvent interface represents the angle between a transducer (a pointer or stylus) axis and the X-Y plane of a device screen.
+
+    // The bubbles event property returns true if an event is a bubbling event. Otherwise it returns false.
+
+    // The cancelBubble() method prevents the event-flow from bubbling up to parent elements. 
+
+    //clientX:-The clientX property returns the horizontal client coordinate of the mouse pointer when a mouse event occurs.
+
+    //clientY:-The clientX property returns the vertically client coordinate of the mouse pointer when a mouse event occurs.
+
+    // composed :-The read-only composed property of the Event interface returns a boolean value which indicates whether or not the event will propagate across the shadow DOM boundary into the standard DOM. 
+
+    // ctrlKey:-he ctrlKey property returns true if the CTRL key is pressed when a mouse event occurs.
+
+    // currentTarget:-The currenttarget property refers to the element whose event listener triggered the event,
+
+    // defaultPrevented:-This feature is available in Web Workers. The defaultPrevented read-only property of the Event interface returns a boolean value indicating whether or not the call to Event
+    
+    // ----------------------Events------------------------------------------------
     // -----------------------------------------------X--------------------------------------------------------
 
     // -----------------------------------------------X--------------------------------------------------------
@@ -105,20 +127,21 @@
     // const images = document.querySelector('#images').addEventListener('click', (e) => {
     //     console.log(e.target.parentNode);
     // })
-    
-    const images=document.querySelector('#images').addEventListener('click',(e)=>{
 
-    // console.log(removeli);
-    console.log(e.target.tagName);
+    const images = document.querySelector('#images').addEventListener('click', (e) => {
 
-    if (e.target.tagName ==='IMG') {
-        // console.log(e.target.id);
-        let removeli=e.target.parentNode;
-        removeli.remove();
-    } 
-    // or
-    // removeli.parentNode.removeChild(removeli);
-})
+        // console.log(removeli);
+        console.log(e.target.tagName);
+        console.log(e);
+
+        if (e.target.tagName === 'IMG') {
+            // console.log(e.target.id);
+            let removeli = e.target.parentNode;
+            removeli.remove();
+        }
+        // or
+        // removeli.parentNode.removeChild(removeli);
+    })
 </script>
 
 </html>
