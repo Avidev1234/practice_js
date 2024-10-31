@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1>Chai aur javascript</h1>
+    <button id="stop">Stop</button>
+    <button id="start">start</button>
+</body>
+<script>
+    //     const sayDate = (str) => {
+    //         console.log(str, Date.now());
+    //     }
+    //   const Interval_id=  setInterval(sayDate, 1000,"Hello");
+
+
+    // clearInterval(Interval_id);
+    let Interval_id;
+    document.querySelector('#start').addEventListener('click', () => {
+        const sayDate = (str) => {
+            console.log(str, Date.now());
+        }
+        Interval_id = setInterval(sayDate, 1000, "Avidev");
+    })
+    document.querySelector('#stop').addEventListener('click', () => {
+
+        // const Interval_id = setInterval((str) => {
+        //     console.log(str, Date.now());
+        // }, 1000, "Avidev");
+
+        // clearInterval(Interval_id);
+        // intervalId = null; // Reset the interval ID
+        if (Interval_id) { // Clear the interval only if it's running
+            clearInterval(Interval_id);
+            Interval_id = null; // Reset the interval ID
+        }
+    })
+</script>
+
+</html>
