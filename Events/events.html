@@ -66,19 +66,22 @@
 
 
     // -----------------------------------------------X--------------------------------------------------------
+    // -------------------Two types of Event propogation-----------------------
+
+
     // Bubbling up :- Propgate from child nodes to parent nodes we use `false` as a 3rd argument.This is the event Propogation.By defeault there is `false` in addEventListener.
 
-    // document.getElementById('images').addEventListener('click', (e) => {
-    //     console.log("click inside the ul"); //events
+    document.getElementById('images').addEventListener('click', (e) => {
+        console.log("click inside the ul"); //events
 
-    // }, false);
+    }, false);
 
-    // document.getElementById('image5').addEventListener('click', (e) => {
-    //     console.log("images5 clicked"); //events
-    //   //  e.stopPropagation();//this will prevent the bubbling of element
-    // }, false);
+    document.getElementById('image5').addEventListener('click', (e) => {
+        console.log("images5 clicked"); //events
+      //  e.stopPropagation();//this will prevent the bubbling of element
+    }, false);
 
-    // output: 
+    // output: when clicked on `image5`
     //  images5 clicked
     // click inside the ul
 
@@ -87,7 +90,7 @@
     // -----------------------------------------------X--------------------------------------------------------
 
     // -----------------------------------------------X--------------------------------------------------------
-    // capturing up :- Propogate from child nodes to parent nodes we use `true` as a 3rd argument.
+    // capturing up :- Propogate from  parent nodes to child nodes we use `true` as a 3rd argument.
 
     // document.getElementById('images').addEventListener('click', (e) => {
     //     console.log("click inside the ul"); //events
@@ -102,7 +105,7 @@
     //  images5 clicked
     // from parent to child/from up to down.
 
-    // capturing up :- Propgate from child nodes to parent nodes we use `true` as a 3rd argument.
+    // capturing up :- Propgate from  parent nodes to child nodes we use `true` as a 3rd argument.
 
 
     // document.getElementById('image5').addEventListener('click',()=>{
@@ -110,11 +113,11 @@
     // },false)
 
     // -----------------------------------------------X--------------------------------------------------------
-    document.getElementById('google').addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();//this will prevent the bubbling of element
-        console.log("google clicked");
-    })
+    // document.getElementById('google').addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     //e.stopPropagation();//this will prevent the bubbling of element
+    //     console.log("google clicked");
+    // })
 
     // -----------------------------------------------X--------------------------------------------------------
     //     const images=document.querySelector('#images').addEventListener('click',(e)=>{
