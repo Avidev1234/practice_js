@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keycode</title>
+    <style>
+        #press {
+            color: #fff;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121;">
+    <div>
+        <p id="press">Press the key and watch the magic</p>
+    </div>
+
+    <script>
+        const para = document.querySelector('#press');
+        console.log(para);
+
+        window.addEventListener('keydown', (e) => {
+            console.log(e);
+            para.innerHTML = `
+            <table>
+  <tr>
+    <th>key</th>
+    <th>keycode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key==" "?"--" : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>`;
+        })
+
+
+    </script>
+</body>
+
+</html>

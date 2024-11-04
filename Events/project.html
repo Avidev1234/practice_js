@@ -13,14 +13,32 @@
     <button id="stop">stop</button>
 
     <script>
-        document.querySelector('#start').addEventListener('click', (e) => {
-            setInterval(() => {
-             const body= document.querySelector('#color');
-             body.style.backgroundColor="red";
-             
-            }, 1000)
+        //    generate a random color with hexvalues
 
-        })  
+        const randColor = function () {
+            const hex = "0123456789ABCDEF";
+            let colors = '#';
+
+            for (let i = 0; i < 6; i++) {
+                colors = colors + hex[Math.floor(Math.random() * 16)];
+            }
+            return colors;
+        }
+        // console.log(Math.floor(Math.random() * 16));
+        console.log(randColor());
+
+        let intervalId;
+
+        document.querySelector("#start").addEventListener('click', () => {
+
+           intervalId= setInterval(() => {
+                document.body.style.backgroundColor = randColor();
+            }, 1000)
+        })
+        document.querySelector("#stop").addEventListener('click', () => {
+            clearInterval(intervalId);
+            intervalId=null;
+        })
     </script>
 </body>
 
