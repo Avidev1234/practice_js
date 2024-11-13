@@ -1,54 +1,80 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-    <body style="background-color: #212121;">
-        <!-- Value	State	Description
+<body style="background-color: #fff;">
+    <!-- Value	State	Description
 0	UNSENT	Client has been created. open() not called yet.
 1	OPENED	open() has been called.
 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
 3	LOADING	Downloading; responseText holds partial data.
 4	DONE	The operation is complete. -->
-    </body>
-    <script>
 
-        // const request = "https://api.github.com/users/Avidev1234";
 
-        // const xhr = new XMLHttpRequest();//creating object
-        // xhr.open('GET', request);//`,open()`it send the request
-        // xhr.onreadystatechange = function () {
-        //     //This function is to track the state of request weather it is `0`,`1`,`2`,`3`,`4`
-        //     console.log(xhr.readyState);
-        //     if (xhr.readyState === 4) {
-        //         const data = JSON.parse(this.responseText);
-        //         console.log(data);
 
-        //         console.log(data.followers);
+</body>
+<script>
 
-        //     }
-        // }
-        // // console.log("HERE");
+    // const request = "https://api.github.com/users/Avidev1234";
 
-        // xhr.send();
-        const requesturl="https://api.github.com/users/Avidev1234";
-        const xhr=new XMLHttpRequest();
-        xhr.open('GET',requesturl);
-        xhr.onreadystatechange=function(){
-            console.log(xhr.readyState);
-            if (xhr.readyState===4) {
-                const data = JSON.parse(this.responseText);//`from string to json data` 
-             console.log(data);
-            //  console.log(typeof data);
-                
-            }
-            
+    // const xhr = new XMLHttpRequest();//creating object
+    // xhr.open('GET', request);//`,open()`it send the request
+    // xhr.onreadystatechange = function () {
+    //     //This function is to track the state of request weather it is `0`,`1`,`2`,`3`,`4`
+    //     console.log(xhr.readyState);
+    //     if (xhr.readyState === 4) {
+    //         const data = JSON.parse(this.responseText);
+    //         console.log(data);
+
+    //         console.log(data.followers);
+
+    //     }
+    // }
+    // // console.log("HERE");
+
+    // xhr.send();
+    const requesturl = "https://api.github.com/users/Avidev1234";
+    // const xhr=new XMLHttpRequest();
+    // xhr.open('GET',requesturl);
+    // xhr.onreadystatechange=function(){
+    //     console.log(xhr.readyState);
+    //     if (xhr.readyState===4) {
+    //         const data = JSON.parse(this.responseText);//`from string to json data` 
+    //      console.log(data);
+    //     //  console.log(typeof data);
+
+    //     }
+
+    // }
+    // xhr.send();
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requesturl);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            //console.log(typeof(this.responseText));//this is in text form want to convert to object
+            const data = JSON.parse(this.response);
+            console.log(data);
+
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            card.innerHTML = `
+                <p>userName:${data.login}</p>
+                <p>image:${data.avatar_url}</p>
+                <p>created at: ${data.created_at}</p>
+                `;
+
+            document.body.appendChild(card);
         }
-        xhr.send();
-    </script>
 
-    </html>
+    }
+    xhr.send();
+</script>
+
+</html>
