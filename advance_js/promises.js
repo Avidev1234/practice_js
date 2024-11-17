@@ -1,6 +1,9 @@
 
 // promises reduce call backHell .callback Hell is the callback under callbacks.
+// promise is eventual completion object of an asynchronous operations
 
+
+// creation of promise
 // 1st type
 const promiseOne = new Promise(function (resolve, reject) {
     // Do an async task
@@ -58,7 +61,7 @@ const promiseFour = new Promise((reslove, reject) => {
     setTimeout(() => {
         // let error = false;//here error is false
         let error = true;//here error is true
-        if (!error) {
+        if (!error) {//not an error
             reslove({ username: "hitesh", password: "123456" })
         } else {
             reject('ERROR:SOMETING WENT WRONG')
@@ -75,13 +78,13 @@ const userName = promiseFour.then((user) => {//how to avoid call back hell
 
 }).catch((error) => {
     console.log(error);
-}).finally(()=>console.log("The promise is being resolved or rejected")
+}).finally(() => console.log("The promise is being resolved or rejected")
 )
 
 
-const promiseFive=new Promise((resolve,rejected)=>{
+const promiseFive = new Promise((resolve, rejected) => {
     setTimeout(() => {
-         let error = false;//here error is false
+        let error = false;//here error is false
         //let error = true;//here error is true
         if (!error) {
             resolve({ username: "js", password: "123456" })
@@ -91,11 +94,61 @@ const promiseFive=new Promise((resolve,rejected)=>{
     }, 5000);
 })
 
-// async await
-async function consumedPromiseFive(){
-    const res=await promiseFive;
-    console.log(res);
-    
+// async await syntax
+async function consumedPromiseFive() {
+    try {
+        const res = await promiseFive;
+        console.log("res", res);
+    } catch (error) {
+        console.log(error);
+
+    }
+
 }
+// one disadvantage of async and await is they don't handle the errors directly. For error Handling we use try catch block
 
 consumedPromiseFive();
+
+// try catch syntax
+
+// async function getAllusers() {
+//     try {
+//         const responseFetch = await fetch('https://api.github.com/users/Avidev1234');
+//         //   console.log(responseFetch);
+//         const data = await responseFetch.json();//converting to JSON
+//         console.log(data);
+//     } catch (error) {
+//         console.log("error");
+
+//     }
+// }
+
+// getAllusers();
+
+// try catch syntax
+
+// ------------showing error------------------------------
+// const fetchingData=new Promise(function (reslove,reject) {
+//     fetch('https://api.github.com/users/Avidev1234');
+//     reslove();
+// })
+
+// fetchingData.then((response)=>{
+//     return response.json();
+// }).then((data)=>{
+//     console.log(data);
+// })
+// .catch((err)=>{
+// console.log(err);
+
+// })
+// ------------showing error------------------------------
+fetch('https://api.github.com/users/Avidev1234')
+.then((response) => {
+    return response.json();
+}).then((data) => {
+    console.log(data);
+}).catch((err) => {
+        console.log(err);
+
+    })
