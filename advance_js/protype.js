@@ -48,3 +48,12 @@ The constructor is called:The constructor function is called with specified argu
 The new object is returned:After the constructor function has been called ,if it doesnot return a non-primitive value (array,object,function) the newly created object is returned.
 
 */
+
+
+// let myName="Hitesh   ";
+// let channel="COD   ";
+
+// console.log(myName.truelength);
+
+
+
