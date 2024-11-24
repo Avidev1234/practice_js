@@ -57,3 +57,14 @@ The new object is returned:After the constructor function has been called ,if it
 
 
 
+let myHeros=["thor","spiderman"];
+
+let heroPower={
+    thor:"hammer",
+    spiderman:"sling",
+
+    getSpiderPower:function () {
+        console.log(`spidy power is ${this.spiderman}`);
+        
+    }
+}
