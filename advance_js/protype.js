@@ -92,10 +92,24 @@ myHeros.chai();
 
 
 // Inheritance:-
-
+// Prototypyal Inheritance:-
+const user={
+    name:"Alok",
+    email:'alok@google.com'
+}
 const Teacher={
     makeVideo:true
 }
 
+const TeachingSupport={
+    isAvailable:false
+}
+
+const taSupport={
+    makeAssignment:'Js assignment',
+    fullTime:true,
+    __proto__:TeachingSupport// linking 2 objects using `__proto__`
+}
 
 
+Teacher.__proto__=user;
