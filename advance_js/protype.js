@@ -57,14 +57,45 @@ The new object is returned:After the constructor function has been called ,if it
 
 
 
-let myHeros=["thor","spiderman"];
+let myHeros = ["thor", "spiderman"];
 
-let heroPower={
-    thor:"hammer",
-    spiderman:"sling",
+let heroPower = {
+    thor: "hammer",
+    spiderman: "sling",
 
-    getSpiderPower:function () {
+    getSpiderPower: function () {
         console.log(`spidy power is ${this.spiderman}`);
-        
+
     }
 }
+
+console.log(heroPower.getSpiderPower());
+
+// injecting function inside a object
+// so adding a function to an objects so that array,function,string can access it.
+Object.prototype.aman = function () {
+    console.log(`Amn is present in all objects`);
+}
+// Here i am giving prperties to a particular Array so only array can access the properties not others.
+Array.prototype.chai=function(){
+    console.log(`I like chai so much`);
+    
+}
+
+// heroPower.aman();
+// heroPower.chai();
+// Here i am giving properties to onject so all array,function,string can access the properties.
+myHeros.aman();
+
+// Here i am giving prperties to a particular Array so only array can access the properties not others.
+myHeros.chai();
+
+
+// Inheritance:-
+
+const Teacher={
+    makeVideo:true
+}
+
+
+
