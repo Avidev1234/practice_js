@@ -77,9 +77,9 @@ Object.prototype.aman = function () {
     console.log(`Amn is present in all objects`);
 }
 // Here i am giving prperties to a particular Array so only array can access the properties not others.
-Array.prototype.chai=function(){
+Array.prototype.chai = function () {
     console.log(`I like chai so much`);
-    
+
 }
 
 // heroPower.aman();
@@ -93,23 +93,43 @@ myHeros.chai();
 
 // Inheritance:-
 // Prototypyal Inheritance:-
-const user={
-    name:"Alok",
-    email:'alok@google.com'
+const user = {
+    name: "Alok",
+    email: 'alok@google.com'
 }
-const Teacher={
-    makeVideo:true
-}
-
-const TeachingSupport={
-    isAvailable:false
+const Teacher = {
+    makeVideo: true
 }
 
-const taSupport={
-    makeAssignment:'Js assignment',
-    fullTime:true,
-    __proto__:TeachingSupport// linking 2 objects using `__proto__`
+const TeachingSupport = {
+    isAvailable: false
+}
+
+const taSupport = {
+    makeAssignment: 'Js assignment',
+    fullTime: true,
+    __proto__: TeachingSupport// linking 2 objects using `__proto__`
 }
 
 
-Teacher.__proto__=user;
+Teacher.__proto__ = user;
+
+
+// modern syntax
+// use instead of `__proto__` it will access properties of objects TeachingSupport,Teacher
+Object.setPrototypeOf(TeachingSupport, Teacher);
+
+
+
+let anotherUsername = 'ChaiAurCode  ';
+String.prototype.trueLength = function () {
+    // console.log(`${this.name}`);
+    console.log(`${this}`);
+    console.log(`True Length is :${this.trim().length}`);
+
+}
+
+anotherUsername.trueLength()
+
+"hitesh".trueLength();
+'Avidev'.trueLength();
