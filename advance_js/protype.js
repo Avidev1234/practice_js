@@ -13,6 +13,7 @@ console.log(multiply.prototype);//->{}
 function createUser(username, score) {
     this.username = username; //`this` is current context
     this.score = score;
+    console.log(`price is ${this.username}`);
 }
 
 // declaring own function
@@ -28,8 +29,11 @@ createUser.prototype.printMe = function () {
 
 // Here we have to use new keyword to take createUser as a refrence.
 // when `new` keyword is used we understand that we have to assamble all those prototype.It taken object and injected the prototype and method on the basis/refrence of createUser
-const chai = new createUser("chai", 25);
+const chai = new createUser("Manish", 25);
+console.log(chai);
+
 const tea = new createUser("tea", 250);
+console.log(tea);
 
 chai.printMe();
 
