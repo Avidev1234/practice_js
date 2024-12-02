@@ -18,19 +18,21 @@ const newObj={
 
 console.log(Object.getOwnPropertyDescriptor(newObj,'userName'));
 
-// Object.defineProperty(newObj,'userName',{
-//     writable:false,
-//     enumerable:false
-// })
+// defining the properties of object ,with this property we can change the property of object
+
+Object.defineProperty(newObj,'userName',{
+    // writable:false,
+    enumerable:false
+})
 
 
-// console.log(Object.getOwnPropertyDescriptor(newObj,'userName'));
+console.log(Object.getOwnPropertyDescriptor(newObj,'userName'));
 
 
 for (let [key,val] of Object.entries(newObj)) {
 
     if (typeof val!=='function') {
         console.log(`value of ${key}:${val}`);
-        
+         
     }
 }
