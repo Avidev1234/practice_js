@@ -1,3 +1,4 @@
+// to find ourt the property of the object
 const checkDescriptor=Object.getOwnPropertyDescriptor(Math,"PI");
 console.log(checkDescriptor);
 
@@ -18,7 +19,7 @@ const newObj={
 
 console.log(Object.getOwnPropertyDescriptor(newObj,'userName'));
 
-// defining the properties of object ,with this property we can change the property of object
+// defining the properties of object using `defineProperty` function ,with this property we can change the property of object
 
 Object.defineProperty(newObj,'userName',{
     // writable:false,
@@ -28,7 +29,7 @@ Object.defineProperty(newObj,'userName',{
 
 console.log(Object.getOwnPropertyDescriptor(newObj,'userName'));
 
-
+// when you want to use `forof` loop in objects you have to use `.entries`
 for (let [key,val] of Object.entries(newObj)) {
 
     if (typeof val!=='function') {
