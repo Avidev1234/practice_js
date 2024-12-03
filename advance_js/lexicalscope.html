@@ -8,6 +8,9 @@
 </head>
 
 <body>
+
+  <button id="Orange">Orange</button>
+  <button id="green">green</button>
   <script>
     // function init() {
     //   let name = "Mozilla"; 
@@ -19,19 +22,87 @@
     // }
     // init();
 
-    function outer() {
-      let userName = "Hitesh"
 
-      function inner(params) {
-        console.log("inner",userName);
+
+    // function outer() {
+    //   let userName = "Hitesh";
+    //   let roll = 454;
+    //   // console.log("parent", seceretNo);
+
+    //   function inner(params) {
+    //     let seceretNo = '123456789'
+    //     console.log("inner", userName);
+    //     console.log(roll);
+
+    //   }
+    //   function innerTwo(params) {
+    //     // console.log("innerTwo", userName);
+    //     // console.log("innerTwo", seceretNo);
+    //     console.log(roll);
+
+    //   }
+    //   inner();
+    //   innerTwo()
+    // }
+    // outer()
+    // console.log("Too outer", userName);
+
+
+    // intresting question related to interview
+    // clouser when yu return the function not only the function get return the lexical scope/its parent function is being return
+    function makeFunc() {
+      const name = "Mozilla";
+      function displayName() {
+        console.log("username", name);
       }
-      inner()
+      return displayName;
     }
-    outer()
-    console.log("Too outer",userName);
 
+    const myFunc = makeFunc();
+    myFunc();
+  </script>
+
+
+  <script>
+
+    // document.getElementById('Orange').onclick = function () {
+    //   document.body.style.backgroundColor = 'orange';
+    // }
+    // document.getElementById('green').onclick = function () {
+    //   document.body.style.backgroundColor = 'green';
+    // }
+
+    // Now Question is if we have 50 buttons and yu have to put 50 types of colors
+
+    // without returning a function
+    // function clickHandler(color) {
+    //     document.body.style.backgroundColor = `${color}`;
+
+    // }
+    // with returning a function
+    function clickHandler(color) {
+      // document.body.style.backgroundColor = `${color}`;
+
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      }
+
+    }
+
+    document.getElementById('Orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
 
   </script>
 </body>
 
 </html>
+
+
+<!-- conclusion :That parent's variable can be accessed by n nos of chids but child's variable can't be accessed by another child  -->
+
+<!-- difference between function and function refrence
+
+function refrence is giving the defination of functoion
+
+
+-->
