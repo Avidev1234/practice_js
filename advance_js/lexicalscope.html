@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function init() {
+    //   let name = "Mozilla"; 
+    //   function displayName() {
+
+    //     console.log(name); 
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+    function outer() {
+      let userName = "Hitesh"
+
+      function inner(params) {
+        console.log("inner",userName);
+      }
+      inner()
+    }
+    outer()
+    console.log("Too outer",userName);
+
+
+  </script>
+</body>
+
+</html>
